@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rollout-guestbook-ui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: rollout-guestbook-ui
+  template:
+    metadata:
+      labels:
+        app: rollout-guestbook-ui
+    spec:
+      containers:
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: rollout-guestbook-ui
+        ports:
+        - containerPort: 80
