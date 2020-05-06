@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: rollout-guestbook-ui
 spec:
@@ -18,3 +18,7 @@ spec:
         name: rollout-guestbook-ui
         ports:
         - containerPort: 80
+  strategy:
+    steps:
+    - setWeight: 20
+    - pause: {}
