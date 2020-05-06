@@ -19,6 +19,7 @@ spec:
         ports:
         - containerPort: 80
   strategy:
-    steps:
-    - setWeight: 20
-    - pause: {}
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {}
