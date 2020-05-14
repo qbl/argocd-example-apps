@@ -22,7 +22,7 @@ spec:
     port: 9898
     # Istio gateways (optional)
     gateways:
-    - ingressgateway.istio-system.svc.cluster.local
+    - public-gateway.istio-system.svc.cluster.local
   analysis:
     # schedule interval (default 60s)
     interval: 10s
