@@ -55,13 +55,12 @@ spec:
       thresholdRange:
         min: 99
       interval: 1m
-    - name: latency
-      templateRef:
-        name: latency
-        namespace: istio-system
+    - name: request-duration
+      # maximum req duration P99
+      # milliseconds
       thresholdRange:
         max: 500
-      interval: 1m
+      interval: 30s
     # testing (optional)
     webhooks:
       - name: acceptance-test
